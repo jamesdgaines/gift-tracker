@@ -3,7 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { View, Text, StyleSheet } from 'react-native';
 import { useTheme } from '@/theme';
 import { TabNavigator } from './TabNavigator';
-import { PersonDetailScreen, PersonFormScreen } from '@/screens';
+import { PersonDetailScreen, PersonFormScreen, GiftFormScreen, GiftDetailScreen, OccasionFormScreen, GiftHistoryScreen } from '@/screens';
 import type { RootStackParamList } from './types';
 
 // Placeholder screens for screens that aren't implemented yet
@@ -25,20 +25,8 @@ const PlaceholderDetailScreen: React.FC<{ name: string; route: { params?: object
   );
 };
 
-const GiftDetailScreen = ({ route }: { route: { params?: object } }) => (
-  <PlaceholderDetailScreen name="Gift Detail" route={route} />
-);
-const GiftFormScreen = ({ route }: { route: { params?: object } }) => (
-  <PlaceholderDetailScreen name="Gift Form" route={route} />
-);
 const OccasionDetailScreen = ({ route }: { route: { params?: object } }) => (
   <PlaceholderDetailScreen name="Occasion Detail" route={route} />
-);
-const OccasionFormScreen = ({ route }: { route: { params?: object } }) => (
-  <PlaceholderDetailScreen name="Occasion Form" route={route} />
-);
-const GiftHistoryScreen = ({ route }: { route: { params?: object } }) => (
-  <PlaceholderDetailScreen name="Gift History" route={route} />
 );
 
 const Stack = createNativeStackNavigator<RootStackParamList>();

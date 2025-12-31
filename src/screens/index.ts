@@ -1,3 +1,10 @@
 export { HomeScreen } from './HomeScreen';
 export { PersonDetailScreen } from './PersonDetailScreen';
 export { PersonFormScreen } from './PersonFormScreen';
+export { GiftFormScreen } from './GiftFormScreen';
+export { GiftDetailScreen } from './GiftDetailScreen';
+export { OccasionsScreen } from './OccasionsScreen';
+export { OccasionFormScreen } from './OccasionFormScreen';
+export { GiftHistoryScreen } from './GiftHistoryScreen';
+export { ReportsScreen } from './ReportsScreen';
+export { SettingsScreen } from './SettingsScreen';

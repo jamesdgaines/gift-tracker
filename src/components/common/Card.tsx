@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, TouchableOpacity, StyleSheet, ViewStyle } from 'react-native';
+import { View, TouchableOpacity, StyleSheet, ViewStyle, StyleProp } from 'react-native';
 import { useTheme } from '@/theme';
 
 export interface CardProps {
@@ -7,7 +7,7 @@ export interface CardProps {
   children: React.ReactNode;
   onPress?: () => void;
   onLongPress?: () => void;
-  style?: ViewStyle;
+  style?: StyleProp<ViewStyle>;
   padding?: 'none' | 'sm' | 'md' | 'lg';
   elevated?: boolean;
   disabled?: boolean;

@@ -5,6 +5,7 @@ import { UserSettings, Currency, AdState } from '@/types';
 
 interface SettingsState extends UserSettings {
   adState: AdState;
+  hapticsEnabled: boolean;
 }
 
 interface SettingsActions {
@@ -14,6 +15,9 @@ interface SettingsActions {
   // Notifications
   setNotificationsEnabled: (enabled: boolean) => void;
   setDefaultReminderDays: (days: number) => void;
+
+  // Haptics
+  setHapticsEnabled: (enabled: boolean) => void;
 
   // Currency
   setDefaultCurrency: (currency: Currency) => void;
@@ -49,6 +53,7 @@ const initialState: SettingsState = {
   adsConsent: null,
   adsConsentDate: undefined,
   adState: initialAdState,
+  hapticsEnabled: true,
 };
 
 export const useSettingsStore = create<SettingsState & SettingsActions>()(
@@ -68,6 +73,11 @@ export const useSettingsStore = create<SettingsState & SettingsActions>()(
 
       setDefaultReminderDays: (days: number): void => {
         set({ defaultReminderDays: days });
+      },
+
+      // Haptics
+      setHapticsEnabled: (enabled: boolean): void => {
+        set({ hapticsEnabled: enabled });
       },
 
       // Currency

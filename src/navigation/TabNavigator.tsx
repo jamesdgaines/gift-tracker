@@ -1,27 +1,10 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { View, Text, StyleSheet } from 'react-native';
+import { Text } from 'react-native';
 import { useTheme } from '@/theme';
 import { TEST_IDS } from '@/constants/testIDs';
-import { HomeScreen } from '@/screens';
+import { HomeScreen, OccasionsScreen, ReportsScreen, SettingsScreen } from '@/screens';
 import type { MainTabParamList } from './types';
-
-// Placeholder screens for tabs that aren't implemented yet
-const PlaceholderScreen: React.FC<{ name: string }> = ({ name }) => {
-  const theme = useTheme();
-  return (
-    <View style={[styles.placeholder, { backgroundColor: theme.colors.background }]}>
-      <Text style={{ color: theme.colors.text, fontSize: 18 }}>{name}</Text>
-      <Text style={{ color: theme.colors.textSecondary, marginTop: 8 }}>
-        Coming soon...
-      </Text>
-    </View>
-  );
-};
-
-const OccasionsScreen = () => <PlaceholderScreen name="Occasions" />;
-const ReportsScreen = () => <PlaceholderScreen name="Reports" />;
-const SettingsScreen = () => <PlaceholderScreen name="Settings" />;
 
 const Tab = createBottomTabNavigator<MainTabParamList>();
 
@@ -113,13 +96,5 @@ export const TabNavigator: React.FC = () => {
     </Tab.Navigator>
   );
 };
-
-const styles = StyleSheet.create({
-  placeholder: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
 
 export default TabNavigator;
